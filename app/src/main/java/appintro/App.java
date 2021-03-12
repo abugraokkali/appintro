@@ -11,6 +11,7 @@ import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 import static spark.Spark.get;
 import static spark.Spark.post;
+import static spark.Spark.port;
 
 
 public class App {
@@ -19,11 +20,10 @@ public class App {
     }
 
     public static void main(String[] args) {
-        StackTraceElement[] stack = Thread.currentThread ().getStackTrace ();
-        StackTraceElement main = stack[stack.length - 1];
-        String mainClass = main.getClassName ();
-        System.out.println(mainClass);
+
         System.out.println(new App().getGreeting());
+        int port = Integer.parseInt(System.getenv("PORT"));
+        port(port);
         
         get("/",(rq,rs)-> "Hello World");
         get("/compute",
