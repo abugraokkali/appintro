@@ -90,6 +90,7 @@ public class App {
             else
                 greater.add(arr.get(i));
         }
+        //finding greater and less numbers and storing in arrays.
         for(int i=0;i<greater.size();i++){
            greater.get(i);
         }
