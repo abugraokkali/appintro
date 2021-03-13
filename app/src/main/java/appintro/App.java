@@ -63,7 +63,7 @@ public class App {
 
             ArrayList<Integer> greater=new ArrayList<>();
             ArrayList<Integer> less=new ArrayList<>();
-            boolean result=App.isGreaterOrEqualToAverage(inputList, input2AsInt, greater, less);
+            boolean result=App.isGreaterOrEqualThanAverage(inputList, input2AsInt, greater, less);
             Map<String,String>map=new HashMap<>();
             map.put("greater", greater.toString());
             map.put("less", less.toString());
@@ -78,25 +78,21 @@ public class App {
     
     
     }
-    public static boolean isGreaterOrEqualToAverage(ArrayList<Integer> arr,Integer x,ArrayList<Integer> greater,ArrayList<Integer> less){
+    public static boolean isGreaterOrEqualThanAverage(ArrayList<Integer> arr,Integer x,ArrayList<Integer> greater,ArrayList<Integer> less){
+        if(arr.size()==0 || arr==null)
+            throw new NullPointerException();
         double sum=0;
         for(int i=0;i<arr.size();i++){
             sum+=arr.get(i);
         }
+        //finding greater and less numbers and storing in arrays.
         double average=(sum/arr.size());
         for(int i=0;i<arr.size();i++){
-            if(arr.get(i)<average)
+            if(arr.get(i)<x)
                 less.add(arr.get(i));
             else
                 greater.add(arr.get(i));
         }
-        //finding greater and less numbers and storing in arrays.
-        for(int i=0;i<greater.size();i++){
-           greater.get(i);
-        }
-        for(int i=0;i<less.size();i++){
-            less.get(i);
-         }
         if(x>=average)
             return true;
         else
