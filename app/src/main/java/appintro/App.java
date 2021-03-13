@@ -70,13 +70,22 @@ public class App {
     
     
     }
-    public static boolean search(ArrayList<Integer> arr,int e){
-        if(arr==null)return false;
+    public static boolean isAboveTheAverage(ArrayList<Integer> arr,Integer x,ArrayList<Integer> greater,ArrayList<Integer> less){
+        double sum=0;
         for(int i=0;i<arr.size();i++){
-            if(arr.get(i)==e)
-                return true;
+            sum+=arr.get(i);
         }
-        return false;
+        double average=(sum/arr.size());
+        for(int i=0;i<arr.size();i++){
+            if(arr.get(i)<average)
+                less.add(arr.get(i));
+            else
+                greater.add(arr.get(i));
+        }
+        if(x>=average)
+            return true;
+        else
+            return false;
     } 
     
 }
