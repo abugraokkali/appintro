@@ -63,8 +63,11 @@ public class App {
             ArrayList<Integer> greater=new ArrayList<>();
             ArrayList<Integer> less=new ArrayList<>();
             boolean result=App.isAboveTheAverage(inputList, input2AsInt, greater, less);
-            Map<String,Boolean>map=new HashMap<>();
-            map.put("result",result);
+            Map<String,String>map=new HashMap<>();
+            if(result==true)
+                map.put("result","above the average");
+            else
+                map.put("result","belov the average");
             return new ModelAndView(map,"compute.mustache");
         },
         new MustacheTemplateEngine()
