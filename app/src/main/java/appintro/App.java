@@ -62,9 +62,9 @@ public class App {
             map.put("greater", greater.toString());
             map.put("less", less.toString());
             if(result==true)
-                map.put("result","The number is greater equal than the average of list.");
+                map.put("result",input2AsInt+" is greater than or equal than to average of list.");
             else
-                map.put("result","The number is less than the average of list.");
+                map.put("result",input2AsInt+" is less than the average of list.");
             return new ModelAndView(map,"compute.mustache");
         },
         new MustacheTemplateEngine()
