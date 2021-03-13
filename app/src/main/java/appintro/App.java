@@ -61,12 +61,12 @@ public class App {
 
             ArrayList<Integer> greater=new ArrayList<>();
             ArrayList<Integer> less=new ArrayList<>();
-            boolean result=App.isAboveTheAverage(inputList, input2AsInt, greater, less);
+            boolean result=App.isGreaterOrEqualToAverage(inputList, input2AsInt, greater, less);
             Map<String,String>map=new HashMap<>();
             if(result==true)
-                map.put("result","The number is above the average");
+                map.put("result","The number is greater or equal than the average of list");
             else
-                map.put("result","The number is below the average");
+                map.put("result","The number is less than the average of list");
             return new ModelAndView(map,"compute.mustache");
         },
         new MustacheTemplateEngine()
@@ -74,7 +74,7 @@ public class App {
     
     
     }
-    public static boolean isAboveTheAverage(ArrayList<Integer> arr,Integer x,ArrayList<Integer> greater,ArrayList<Integer> less){
+    public static boolean isGreaterOrEqualToAverage(ArrayList<Integer> arr,Integer x,ArrayList<Integer> greater,ArrayList<Integer> less){
         double sum=0;
         for(int i=0;i<arr.size();i++){
             sum+=arr.get(i);

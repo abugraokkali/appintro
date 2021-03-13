@@ -20,7 +20,7 @@ class AppTest {
         ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,2,3,4));
         ArrayList<Integer> greater=new ArrayList<>();
         ArrayList<Integer> less=new ArrayList<>();
-        assertTrue(App.isAboveTheAverage(arr, 3, greater, less));
+        assertTrue(App.isGreaterOrEqualToAverage(arr, 3, greater, less));
     }
 
     
