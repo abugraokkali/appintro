@@ -57,7 +57,7 @@ public class App {
 
             ArrayList<Integer> greater=new ArrayList<>();
             ArrayList<Integer> less=new ArrayList<>();
-            boolean result=App.isGreaterOrEqualThanAverage(inputList, input2AsInt, greater, less);
+            boolean result=App.isGreaterThanOrEqualToAverage(inputList, input2AsInt, greater, less);
             Map<String,String>map=new HashMap<>();
             map.put("greater", greater.toString());
             map.put("less", less.toString());
@@ -77,7 +77,7 @@ public class App {
         Greater array filled with elements of arr that are greater than or equal to x.
         Less array filled with elements of arr that are less than x.     
     */
-    public static boolean isGreaterOrEqualThanAverage(ArrayList<Integer> arr,Integer x,ArrayList<Integer> greater,ArrayList<Integer> less){
+    public static boolean isGreaterThanOrEqualToAverage(ArrayList<Integer> arr,Integer x,ArrayList<Integer> greater,ArrayList<Integer> less){
         if(arr.size()==0 || arr==null)
             throw new NullPointerException();
         double sum=0;

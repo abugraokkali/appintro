@@ -14,16 +14,18 @@ class AppTest {
     @Test
     public void testGreaterThanAverage(){
         ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,3,5,7,9));
-        ArrayList<Integer> greater=new ArrayList<>();
-        ArrayList<Integer> less=new ArrayList<>();
-        assertTrue(App.isGreaterOrEqualThanAverage(arr, 6, greater, less));
+        assertTrue(App.isGreaterThanOrEqualToAverage(arr, 6,new ArrayList<Integer>(),new ArrayList<Integer>()));
     }
     @Test
     public void testLessThanAverage(){
         ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,3,5,7,9));
-        ArrayList<Integer> greater=new ArrayList<>();
-        ArrayList<Integer> less=new ArrayList<>();
-        assertFalse(App.isGreaterOrEqualThanAverage(arr, 4, greater, less));
+        assertFalse(App.isGreaterThanOrEqualToAverage(arr, 4,new ArrayList<Integer>(),new ArrayList<Integer>()));
+
+    }
+    @Test
+    public void testEqualToAverage(){
+        ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,3,5,7,9));
+        assertTrue(App.isGreaterThanOrEqualToAverage(arr, 5,new ArrayList<Integer>(),new ArrayList<Integer>()));
     }
     @Test
     public void testEmptyInputList(){
@@ -32,7 +34,7 @@ class AppTest {
         ArrayList<Integer> less=new ArrayList<>();
         assertThrows(NullPointerException.class,
         ()->{
-            App.isGreaterOrEqualThanAverage(arr, 4, greater, less);
+            App.isGreaterThanOrEqualToAverage(arr, 4, greater, less);
         }
         );
         
@@ -42,7 +44,7 @@ class AppTest {
         ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(-1,3,7,5,-9,11));
         ArrayList<Integer> greater=new ArrayList<>();
         ArrayList<Integer> less=new ArrayList<>();
-        App.isGreaterOrEqualThanAverage(arr, 4, greater, less);
+        App.isGreaterThanOrEqualToAverage(arr, 4, greater, less);
 
         int[]less_arr = new int[less.size()];
         for(int i=0;i<less.size();i++)
@@ -54,7 +56,7 @@ class AppTest {
         ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(-1,3,7,5,-9,11));
         ArrayList<Integer> greater=new ArrayList<>();
         ArrayList<Integer> less=new ArrayList<>();
-        App.isGreaterOrEqualThanAverage(arr, 4, greater, less);
+        App.isGreaterThanOrEqualToAverage(arr, 4, greater, less);
 
         int[]greater_arr = new int[greater.size()];
         for(int i=0;i<less.size();i++)
