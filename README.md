@@ -1,7 +1,5 @@
-This ismy first gradle project with CI/CD deployed on Heroku.
-
-Some changes.
+A demo app with CI/CD deployed on Heroku.
 
 [![Build Status](https://travis-ci.com/abugraokkali/appintro.svg?branch=main)](https://travis-ci.com/abugraokkali/appintro)
 
-feature/xyz
+Demo site : https://blooming-lowlands-05659.herokuapp.com/compute
