@@ -23,10 +23,10 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Logger logger = LogManager.getLogger(App.class);
+        /*Logger logger = LogManager.getLogger(App.class);
         int port = Integer.parseInt(System.getenv("PORT"));
         port(port);
-        logger.error("Current port number:" + port);
+        logger.error("Current port number:" + port);*/
 
         System.out.println(new App().getGreeting());
        
@@ -59,8 +59,10 @@ public class App {
             String input2 = req.queryParams("input2").replaceAll("\\s","");
             int input2AsInt = Integer.parseInt(input2);
 
-            boolean result = App.search(inputList, input2AsInt);
-
+            //boolean result = App.search(inputList, input2AsInt);
+            ArrayList<Integer> greater=new ArrayList<>();
+            ArrayList<Integer> less=new ArrayList<>();
+            boolean result=App.isAboveTheAverage(inputList, input2AsInt, greater, less);
             Map<String,Boolean>map=new HashMap<>();
             map.put("result",result);
             return new ModelAndView(map,"compute.mustache");
@@ -82,6 +84,12 @@ public class App {
             else
                 greater.add(arr.get(i));
         }
+        for(int i=0;i<greater.size();i++){
+           greater.get(i);
+        }
+        for(int i=0;i<less.size();i++){
+            less.get(i);
+         }
         if(x>=average)
             return true;
         else

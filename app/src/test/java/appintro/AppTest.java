@@ -6,11 +6,21 @@ package appintro;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    }
+    @Test
+    public void testAboveTheAverage(){
+        ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,2,3,4));
+        ArrayList<Integer> greater=new ArrayList<>();
+        ArrayList<Integer> less=new ArrayList<>();
+        assertTrue(App.isAboveTheAverage(arr, 3, greater, less));
     }
 
     
