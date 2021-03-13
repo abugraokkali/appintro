@@ -72,6 +72,11 @@ public class App {
     
     
     }
+    /*This method return true when x is greater than or equal to average of elements of arr
+        Also it takes two arraylists greater and less.
+        Greater array filled with elements of arr that are greater than or equal to x.
+        Less array filled with elements of arr that are less than x.     
+    */
     public static boolean isGreaterOrEqualThanAverage(ArrayList<Integer> arr,Integer x,ArrayList<Integer> greater,ArrayList<Integer> less){
         if(arr.size()==0 || arr==null)
             throw new NullPointerException();
@@ -79,7 +84,7 @@ public class App {
         for(int i=0;i<arr.size();i++){
             sum+=arr.get(i);
         }
-        //finding greater and less numbers and storing in arrays.
+        //finding greater and less elements and storing in arrays.
         double average=(sum/arr.size());
         for(int i=0;i<arr.size();i++){
             if(arr.get(i)<x)
