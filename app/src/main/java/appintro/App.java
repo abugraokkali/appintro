@@ -35,7 +35,7 @@ public class App {
         get("/compute",
         (rq,rs)-> {
             Map<String,String>map= new HashMap<String,String>();
-            map.put("result","not computed yet");
+            map.put("result","Not computed yet");
             return new ModelAndView(map,"compute.mustache");
         },
         new MustacheTemplateEngine()
@@ -59,15 +59,14 @@ public class App {
             String input2 = req.queryParams("input2").replaceAll("\\s","");
             int input2AsInt = Integer.parseInt(input2);
 
-            //boolean result = App.search(inputList, input2AsInt);
             ArrayList<Integer> greater=new ArrayList<>();
             ArrayList<Integer> less=new ArrayList<>();
             boolean result=App.isAboveTheAverage(inputList, input2AsInt, greater, less);
             Map<String,String>map=new HashMap<>();
             if(result==true)
-                map.put("result","above the average");
+                map.put("result","The number is above the average");
             else
-                map.put("result","belov the average");
+                map.put("result","The number is below the average");
             return new ModelAndView(map,"compute.mustache");
         },
         new MustacheTemplateEngine()
