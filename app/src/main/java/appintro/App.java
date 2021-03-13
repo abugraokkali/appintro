@@ -63,6 +63,8 @@ public class App {
             ArrayList<Integer> less=new ArrayList<>();
             boolean result=App.isGreaterOrEqualToAverage(inputList, input2AsInt, greater, less);
             Map<String,String>map=new HashMap<>();
+            map.put("greater", greater.toString());
+            map.put("less", less.toString());
             if(result==true)
                 map.put("result","The number is greater or equal than the average of list");
             else
