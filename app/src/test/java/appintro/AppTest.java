@@ -15,24 +15,6 @@ class AppTest {
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 
-    @Test
-    public void testFound(){
-        ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,2,3,4));
-        assertTrue(App.search(arr, 4));
-    }
-    @Test
-    public void testNotFound(){
-        ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,2,3,4));
-        assertFalse(App.search(arr, 5));
-    }
-    @Test
-    public void testEmptyArr(){
-        ArrayList<Integer> arr=new ArrayList<>();
-        assertFalse(App.search(arr, 5));
-    }
-    @Test
-    public void testNullArr(){
-        assertFalse(App.search(null, 5));
-    }
+    
 
 }
