@@ -36,6 +36,8 @@ public class App {
         (rq,rs)-> {
             Map<String,String>map= new HashMap<String,String>();
             map.put("result","Not computed yet");
+            map.put("greater","Not computed yet");
+            map.put("less", "Not computed yet");
             return new ModelAndView(map,"compute.mustache");
         },
         new MustacheTemplateEngine()
