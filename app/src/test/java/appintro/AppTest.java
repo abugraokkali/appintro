@@ -11,10 +11,6 @@ import java.util.Arrays;
 
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
-    }
     @Test
     public void testGreaterThanAverage(){
         ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,3,5,7,9));
